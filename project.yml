@@ -1,1 +1,26 @@
+name: AirportSimulation
+options:
+  bundleIdPrefix: com.simulations-express
+  deploymentTarget:
+    iOS: 15.0
+    macOS: 12.0
 
+targets:
+  AirportSimulation:
+    type: application
+    platform: iOS
+    sources: 
+      - path: . # Points to your current folder structure
+    settings:
+      base:
+        CURRENT_PROJECT_VERSION: 0.4.0
+    dependencies:
+      - framework: GameplayKit.framework
+      - framework: SwiftUI.framework
+
+# This tells XcodeGen how to organize your build
+schemes:
+  AirportSimulation:
+    build:
+      targets:
+        AirportSimulation: all
